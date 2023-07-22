@@ -7,6 +7,7 @@ import PySimpleGUI as sg
 mnist = tf.keras.datasets.mnist
 (_, _), (test_images, _) = mnist.load_data()
 
+
 # Функция для отображения случайного тестового изображения
 def show_random_image():
     # Выбор случайного тестового изображения
@@ -37,7 +38,8 @@ def show_random_image():
     layout = [
         [sg.Image(filename="temp.png")],
         [buttons_layout],
-        [sg.Button("Верно", key="correct", size=(10, 2), pad=(5, 5)), sg.HSeparator(), sg.Button("Не верно", key="incorrect", size=(10, 2), pad=(5, 5))],
+        [sg.Button("Верно", key="correct", size=(10, 2), pad=(5, 5)), sg.HSeparator(),
+         sg.Button("Не верно", key="incorrect", size=(10, 2), pad=(5, 5))],
         [sg.Text(f"Однозначно цифра: {predicted_label}", size=(20, 1), justification='center', font='Any 12')],
     ]
 
@@ -55,5 +57,7 @@ def show_random_image():
 
     window.close()
 
+
 # Отображаем первое случайное изображение
 show_random_image()
+
